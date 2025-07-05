@@ -47,7 +47,7 @@ export default function Index() {
     const fetchPortfolioData = async () => {
       try {
         const response = await axios.get<PortfolioResponse>(
-          "http://127.0.0.1:8000/portfolio",
+          "https://angelone-smartapi.onrender.com/portfolio",
         ); // replace with your actual endpoint
         if (response.data.status) {
           setPortfolioData(response.data.data);
@@ -146,7 +146,7 @@ export default function Index() {
           <Card className="bg-white/70 backdrop-blur-sm border-slate-200/50">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-slate-600">
-                Total Investment
+                Total Investment Equity
               </CardTitle>
               <Wallet className="h-4 w-4 text-slate-500" />
             </CardHeader>
@@ -172,6 +172,21 @@ export default function Index() {
                 {formatCurrency(metrics.currentValue)}
               </div>
               <p className="text-xs text-slate-500 mt-1">Market valuation</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/70 backdrop-blur-sm border-slate-200/50">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium text-slate-600">
+                Additional Assets
+              </CardTitle>
+            
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-slate-900">
+                ₹2230(MF) + ₹7978
+              </div>
+              <p className="text-xs text-slate-500 mt-1">Wallet valuation</p>
             </CardContent>
           </Card>
 
